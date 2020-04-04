@@ -1,0 +1,293 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Top-UI | App_UploadImg_Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/style.css' %}">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<script type="text/javascript" src="{% static 'js/jquery.scrollify.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/slick/slick.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/site.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'js/slick/slick.css' %}" />
+	<link rel='shortcut icon' href="{% static 'img/Logo_icon.png' %}" />
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<script type="text/javascript">
+		$(function() {
+	         $.scrollify({
+	            section : ".suku",
+	            updateHash : false,
+	            scrollSpeed: 700,
+	            before: function(index, sections) {
+		            var sno = index + 1;
+		            $(".suku").removeClass("glow");
+		            $(".suku:nth-child("+sno+")").addClass("glow");     
+	            	$('a[href="#'+$('.glow').attr('id')+'"]').closest('li').addClass('active').siblings().removeClass();
+	            	funinit();
+		        }
+	         });
+        });
+	</script>
+</head>
+
+<body class="black-bg">
+	
+	<div id="page-2" class="blank">
+		<div id="hdr">
+			<div class="logo">
+				<img src="{% static 'img/new-logo-2.png' %}">
+			</div>
+			<div class="toggle-button">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="vnav-menu">
+				<ul class="list">
+					<li class="home active" data-line="Home">
+						<a href="/">
+							<i class="ion-ios-home"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+					<li class="about" data-line="Code">
+						<a href="#aboutsite">
+							<i class="ion-information"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+					<li class="services" data-line="">
+						<!-- <a hreff="/index.html#port">
+							<i class="ion-settings"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a> -->
+					</li>
+					<li class="portfolio" data-line="App">
+						<a href="App">
+							<i class="ion-images"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+					<li class="contact" data-line="">
+						<!-- <a hreff="/index.html#contact">
+							<i class="ion-ios-telephone"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a> -->
+					</li>
+					<li class="follow" data-line="Follow">
+						<a href="#fllw">
+							<i class="ion-android-share-alt"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+				</ul>
+				<div class="pointer">
+				</div>
+			</div>
+		</div>
+		<div id="bd">
+			<div id="home" class="section suku card-main-wrapper">
+				<div class="card">
+					<div class="sec-content lefty">
+						  <img src="{{ img }}" alt="Please Select the file and hit on Upload Button" srcset="" style="width: 70%; height:70%;">
+						  {{label1}} &darr;
+					</div>
+					<br/><br/>{{label1}} &darr;
+					<div class="sec-content">
+						<div class="desc" style="margin-left: 25%;">
+							<br/><br/>
+							<form method="POST" action="upload" enctype="multipart/form-data"> {% csrf_token %}
+								<label style="float: left;">Select the file:</label>&nbsp;<input type="file" name="files" id="upload_file" style="float: left;" required>
+								<input type="submit" value="upload">
+								<p class="text-success" style="margin-left:350px;"> {{ message }}</p>
+							</form>
+							<h1>{{label_of_predect}}</h1>
+							{% for item in list_of_items %}
+								<p style="float: left;">{{item}},&nbsp;</p>
+							{% endfor %}
+						</div>
+					</div>
+				</div>			
+			</div>
+
+			<div id="aboutsite" class="section suku card-main-wrapper">
+				<div class="abs-bg">
+				</div>
+				<div class="card">
+					<div class="sec-content">
+						<h1>Code<hr></h1>
+						<div>
+							<i class="icon ion-clipboard"></i><button onclick="myFunction()"><h3>{{copy}}</h3></button>
+							<br/>
+							<textarea name="" id="myInput" cols="50" rows="15" placeholder="Please Select the file to get the code" readonly style="cursor: pointer;">{{html_web_content}}</textarea><br/>
+							<h3>If you want any text-editor? &nbsp;&nbsp;<a href="text_editor" target="_blank" style="color: #FF6347;">Text-Editor</a></h3>
+							<!-- <input type="text" value="{{html_web_content}}" id="myInput"> -->
+							<script>
+								function myFunction() 
+								{
+									var copyText = document.getElementById("myInput");
+									var content = document.getElementById("myInput").value;
+									if (content == null) {
+										alert("!!!Error: Please Select the file to get the code.")
+									} else{
+										copyText.select();
+										copyText.setSelectionRange(0, 99999)
+										document.execCommand("copy");
+										alert("Copied the text: " + copyText.value);
+									}
+								}
+							</script>
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<div id="ftr">
+			<div id="fllw" class="section suku card-main-wrapper">
+				<h1 class="trig">Follow</h1>
+				<div class="card">
+					<div class="sec-content">
+						<div class="soci">
+							<ul class="flash">
+								<li class="feeds"><a href="https://www.facebook.com/TopUi.Website" target="_blank"></a></li>
+								<li class="tweets"><a href="https://twitter.com/ui_top" target="_blank"></a></li>
+								<li class="posts"><a href="https://www.instagram.com/topui.website" target="_blank"></a></li>
+								<li class="pens"><a href="https://codepen.io/Top-Ui" target="_blank"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="foot-content">
+					<div class="card">
+						<div class="foot-brand"><a href="#">Top<img src="{% static 'img/new-logo-2.png' %}" class="img-responsive" style="width: 100px;">UI</a></div>
+						<p class="copy">2016 &nbsp; &copy; &nbsp;<a href="#" class="vlogo">Top-Ui</a> &nbsp; All Rights Reserved</p>
+					</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(function() {
+			$("html, body").css({
+				overflow: "hidden",
+				height: "100%"
+			});
+			if ($(window).scrollTop() > $(window).height()/2) {
+				$('#hdr .logo').addClass('doit');
+			}
+			setInterval(function() {
+				$('.parallax > div img.widz').each(function(){
+					$(this).removeClass('widz').siblings().addClass('widz');
+				});
+            }, 4000);	
+		});
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > $(window).height()/2){
+				$('#hdr .logo').addClass('doit');
+			}				
+			else{
+				$('#hdr .logo').removeClass('doit');
+			}
+			$('.card').each(function() {
+				if ($(window).scrollTop() + $(window).scrollTop()/4 > $(this).offset().top){
+					$(this).addClass('active');
+				}
+				else{
+					$(this).removeClass('active');
+				};
+			});
+		});
+		$(document).on('click', '.toggle-button', function(){
+			$(this).closest('#hdr').toggleClass('open').siblings('#bd,#ftr').toggleClass('blur-it');
+		});
+		$(document).on('click', '.list li a', function(){
+			$(this).dblclick().closest('#hdr').removeClass('open').siblings('#bd,#ftr').removeClass('blur-it');
+		});
+
+		$( document ).on( "mousemove", function( event ) {
+			if ($(window).width()>767) {
+				var mx = event.pageX;
+				var my = event.pageY - $(window).scrollTop();
+				var range = 100;
+				if (my < range*2 && $('#hdr.open').length == 0 && (mx > $(window).width() - range*2)){
+					var trns_y = (my-range/1.5)/2;
+					var trns_x = (mx - ($(window).width()-range/1.5))/2;
+					$('.toggle-button').addClass('magnet').css({
+						'transform' : 'translate('+trns_x+'px,'+trns_y+'px)'
+					});
+				}
+				else{
+					$('.toggle-button').removeAttr('style').removeClass('magnet');
+				};
+				var transh = mx/20;
+				var transv = my/15;
+				/*$('.parallax > div').each(function(){
+					$(this).css('transform','translateX('+transh+'px) translateY('+transv+'px)');
+					$('.anm-img').css('transform','translateX('+transh/3+'px) translateY('+transv/2+'px)');
+				});*/
+			}
+
+		});
+		var angle = 0;
+		funinit();
+		function funinit() {
+			angle = (360/($('.list li').length)*($('.list li.active').index()));
+			$('.pointer').css({
+				'transform' : 'rotate('+angle+'deg)'
+			});
+		}
+		$(function (){
+			$(document).on('mouseover','.list > li', function(){
+				var len = $('.list li').length;
+				var ths = $(this);
+				var active = $('.list li.active');
+				if (ths.index() >= active.index()){
+					if (ths.index() - active.index() < len/2){
+						angle = angle + (360/(len)*(ths.index() - active.index()));
+							//console.log('case-1');
+					}
+					else{
+						angle = angle - (360/(len)*(len - ths.index() + active.index()));
+							//console.log('case-2');
+					}
+				}
+				else if (ths.index() < active.index()){
+					if (active.index() - ths.index() < len/2){
+						angle = angle - (360/(len)*(active.index() - ths.index()));
+							//console.log('case-3');
+					}
+					else{
+						angle = angle + (360/(len)*(len + ths.index() - active.index()));
+							//console.log('case-4');
+					}
+				}
+				ths.addClass('active').siblings().removeClass('active');
+				$('.pointer').css({
+					'transform' : 'rotate('+angle+'deg)'
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>

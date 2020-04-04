@@ -1,0 +1,166 @@
+Microsoft Windows [Version 10.0.18363.657]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\aravi>python --version
+Python 3.6.5
+
+C:\Users\aravi>pip --version
+pip 20.0.2 from c:\users\aravi\appdata\local\programs\python\python__3_6_5\lib\site-packages\pip (python 3.6)
+
+C:\Users\aravi>pip install virtualenvwrapper-win
+Collecting virtualenvwrapper-win
+  Downloading virtualenvwrapper-win-1.2.6.tar.gz (21 kB)
+Collecting virtualenv
+  Downloading virtualenv-20.0.7-py2.py3-none-any.whl (8.0 MB)
+     |████████████████████████████████| 8.0 MB 312 kB/s
+Collecting importlib-metadata<2,>=0.12; python_version < "3.8"
+  Downloading importlib_metadata-1.5.0-py2.py3-none-any.whl (30 kB)
+Collecting distlib<1,>=0.3.0
+  Downloading distlib-0.3.0.zip (571 kB)
+     |████████████████████████████████| 571 kB 1.1 MB/s
+Collecting filelock<4,>=3.0.0
+  Downloading filelock-3.0.12-py3-none-any.whl (7.6 kB)
+Collecting six<2,>=1.9.0
+  Downloading six-1.14.0-py2.py3-none-any.whl (10 kB)
+Collecting appdirs<2,>=1.4.3
+  Downloading appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+Collecting importlib-resources<2,>=1.0; python_version < "3.7"
+  Downloading importlib_resources-1.0.2-py2.py3-none-any.whl (32 kB)
+Collecting zipp>=0.5
+  Downloading zipp-3.0.0-py3-none-any.whl (4.8 kB)
+Installing collected packages: zipp, importlib-metadata, distlib, filelock, six, appdirs, importlib-resources, virtualenv, virtualenvwrapper-win
+    Running setup.py install for distlib ... done
+    Running setup.py install for virtualenvwrapper-win ... done
+Successfully installed appdirs-1.4.3 distlib-0.3.0 filelock-3.0.12 importlib-metadata-1.5.0 importlib-resources-1.0.2 six-1.14.0 virtualenv-20.0.7 virtualenvwrapper-win-1.2.6 zipp-3.0.0
+
+C:\Users\aravi>pip freeze
+appdirs==1.4.3
+distlib==0.3.0
+filelock==3.0.12
+importlib-metadata==1.5.0
+importlib-resources==1.0.2
+six==1.14.0
+virtualenv==20.0.7
+virtualenvwrapper-win==1.2.6
+zipp==3.0.0
+
+C:\Users\aravi>pip install pylint
+Collecting pylint
+  Downloading pylint-2.4.4-py3-none-any.whl (302 kB)
+     |████████████████████████████████| 302 kB 297 kB/s
+Collecting mccabe<0.7,>=0.6
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting isort<5,>=4.2.5
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 387 kB/s
+Collecting colorama; sys_platform == "win32"
+  Downloading colorama-0.4.3-py2.py3-none-any.whl (15 kB)
+Collecting astroid<2.4,>=2.3.0
+  Downloading astroid-2.3.3-py3-none-any.whl (205 kB)
+     |████████████████████████████████| 205 kB 1.7 MB/s
+Collecting typed-ast<1.5,>=1.4.0; implementation_name == "cpython" and python_version < "3.8"
+  Downloading typed_ast-1.4.1-cp36-cp36m-win_amd64.whl (155 kB)
+     |████████████████████████████████| 155 kB 731 kB/s
+Collecting lazy-object-proxy==1.4.*
+  Downloading lazy_object_proxy-1.4.3-cp36-cp36m-win_amd64.whl (20 kB)
+Collecting wrapt==1.11.*
+  Downloading wrapt-1.11.2.tar.gz (27 kB)
+Requirement already satisfied: six~=1.12 in c:\users\aravi\appdata\local\programs\python\python__3_6_5\lib\site-packages (from astroid<2.4,>=2.3.0->pylint) (1.14.0)
+Installing collected packages: mccabe, isort, colorama, typed-ast, lazy-object-proxy, wrapt, astroid, pylint
+    Running setup.py install for wrapt ... done
+Successfully installed astroid-2.3.3 colorama-0.4.3 isort-4.3.21 lazy-object-proxy-1.4.3 mccabe-0.6.1 pylint-2.4.4 typed-ast-1.4.1 wrapt-1.11.2
+
+C:\Users\aravi>pip freeze
+appdirs==1.4.3
+astroid==2.3.3
+colorama==0.4.3
+distlib==0.3.0
+filelock==3.0.12
+importlib-metadata==1.5.0
+importlib-resources==1.0.2
+isort==4.3.21
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+pylint==2.4.4
+six==1.14.0
+typed-ast==1.4.1
+virtualenv==20.0.7
+virtualenvwrapper-win==1.2.6
+wrapt==1.11.2
+zipp==3.0.0
+
+C:\Users\aravi\Desktop\Test>mkvirtualenv mini_project
+created virtual environment CPython3.6.5.final.0-64 in 549ms
+  creator CPython3Windows(dest=C:\Users\aravi\Envs\mini_project, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=C:\Users\aravi\AppData\Local\pypa\virtualenv\seed-app-data\v1)
+  activators BashActivator,BatchActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+
+(mini_project) C:\Users\aravi\Desktop\mini_project>C:/Users/aravi/envs/mini_project/Scripts/python.exe -m pip install -U pylint
+Collecting pylint
+  Using cached pylint-2.4.4-py3-none-any.whl (302 kB)
+Collecting colorama; sys_platform == "win32"
+  Using cached colorama-0.4.3-py2.py3-none-any.whl (15 kB)
+Collecting mccabe<0.7,>=0.6
+  Using cached mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting isort<5,>=4.2.5
+  Using cached isort-4.3.21-py2.py3-none-any.whl (42 kB)
+Collecting astroid<2.4,>=2.3.0
+  Using cached astroid-2.3.3-py3-none-any.whl (205 kB)
+Collecting lazy-object-proxy==1.4.*
+  Using cached lazy_object_proxy-1.4.3-cp36-cp36m-win_amd64.whl (20 kB)
+Collecting six~=1.12
+  Using cached six-1.14.0-py2.py3-none-any.whl (10 kB)
+Collecting typed-ast<1.5,>=1.4.0; implementation_name == "cpython" and python_version < "3.8"      
+  Using cached typed_ast-1.4.1-cp36-cp36m-win_amd64.whl (155 kB)
+Processing c:\users\aravi\appdata\local\pip\cache\wheels\0d\85\48\15d7bfab92a2d0e87372224c1f628fc57db7447a663a58e86c\wrapt-1.11.2-py3-none-any.whl
+Installing collected packages: colorama, mccabe, isort, lazy-object-proxy, six, typed-ast, wrapt, astroid, pylint
+Successfully installed astroid-2.3.3 colorama-0.4.3 isort-4.3.21 lazy-object-proxy-1.4.3 mccabe-0.6.1 pylint-2.4.4 six-1.14.0 typed-ast-1.4.1 wrapt-1.11.2
+
+(mini_project) C:\Users\aravi\Desktop\mini_project>pip freeze
+astroid==2.3.3
+colorama==0.4.3
+isort==4.3.21
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+pylint==2.4.4
+six==1.14.0
+typed-ast==1.4.1
+wrapt==1.11.2
+
+(mini_project) C:\Users\aravi\Desktop\mini_project>pip freeze
+astroid==2.3.3
+colorama==0.4.3
+isort==4.3.21
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+pylint==2.4.4
+six==1.14.0
+typed-ast==1.4.1
+wrapt==1.11.2
+
+(mini_project) C:\Users\aravi\Desktop\mini_project>pip install django
+Collecting django
+  Using cached Django-3.0.4-py3-none-any.whl (7.5 MB)
+Collecting pytz
+  Using cached pytz-2019.3-py2.py3-none-any.whl (509 kB)
+Collecting asgiref~=3.2
+  Downloading asgiref-3.2.7-py2.py3-none-any.whl (19 kB)
+Collecting sqlparse>=0.2.2
+  Using cached sqlparse-0.3.1-py2.py3-none-any.whl (40 kB)
+Installing collected packages: pytz, asgiref, sqlparse, django
+Successfully installed asgiref-3.2.7 django-3.0.4 pytz-2019.3 sqlparse-0.3.1
+
+(mini_project) C:\Users\aravi\Desktop\mini_project>pip freeze
+asgiref==3.2.7
+astroid==2.3.3
+colorama==0.4.3
+Django==3.0.4
+isort==4.3.21
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+pylint==2.4.4
+pytz==2019.3
+six==1.14.0
+sqlparse==0.3.1
+typed-ast==1.4.1
+wrapt==1.11.2

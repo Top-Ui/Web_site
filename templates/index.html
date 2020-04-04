@@ -1,0 +1,435 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Top-UI | Home_Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/style.css' %}">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.scrollify.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/slick/slick.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/site.js' %}"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'js/slick/slick.css' %}" />
+	<link rel='shortcut icon' href="{% static 'img/Logo_icon.png' %}" />
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<script type="text/javascript">
+		$(function() {
+	         $.scrollify({
+	            section : ".suku",
+	            updateHash : false,
+	            scrollSpeed: 700,
+	            before: function(index, sections) {
+		            var sno = index + 1;
+		            $(".suku").removeClass("glow");
+		            $(".suku:nth-child("+sno+")").addClass("glow");     
+	            	$('a[href="#'+$('.glow').attr('id')+'"]').closest('li').addClass('active').siblings().removeClass();
+	            	funinit();
+		        }
+	         });
+        });
+	</script>
+</head>
+
+<body class="black-bg">
+	<div class="load">
+		<img src="{% static 'img/vvload.gif' %}" style="border-radius: 50%;">
+	</div>
+	<div id="page-2" class="blank">
+		<div id="hdr">
+			<div class="logo">
+				<img src="{% static 'img/new-logo-2.png' %}">
+			</div>
+			<div class="toggle-button">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="vnav-menu">
+				<ul class="list">
+					<li class="home active" data-line="Home">
+						<a href="#home">
+							<i class="ion-ios-home"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+					<li class="about" data-line="About">
+						<a href="#aboutsite">
+							<i class="ion-information"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+					<li class="services" data-line="Services">
+						<a href="#port">
+							<i class="ion-settings"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+					<li class="portfolio" data-line="App">
+						<a href="App">
+							<i class="ion-images"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+					<li class="contact" data-line="Contact">
+						<a href="#contact">
+							<i class="ion-ios-telephone"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+					<li class="follow" data-line="Follow">
+						<a href="#fllw">
+							<i class="ion-android-share-alt"></i>
+							<p>
+								<span class="line"></span>
+							</p>
+						</a>
+					</li>
+				</ul>
+				<div class="pointer">
+				</div>
+			</div>
+		</div>
+		<div id="bd">
+			<div id="home" class="section suku card-main-wrapper">
+				<div class="card">
+					<div class="sec-content lefty">
+						<div class="anm">
+							<div class="anm-img">
+								<img src="{% static 'img/responsive.gif' %}">
+							</div>
+							<div class="parallax">
+								<div class="logo1">
+									<img src="{% static 'img/logos/Html.png' %}">
+									<img class="widz" src="{% static 'img/logos/Css.png' %}">
+								</div>
+								<div class="logo2">
+									<img src="{% static 'img/logos/Css.png' %}">
+									<img class="widz" src="{% static 'img/logos/Java_Script.png' %}">
+								</div>
+								<div class="logo3">
+									<img src="{% static 'img/logos/Java_script.png' %}">
+									<img class="widz" src="{% static 'img/logos/Bootstrape.png' %}">
+								</div>
+								<div class="logo4">
+									<img src="{% static 'img/logos/Bootstrape.png' %}">
+									<img class="widz" src="{% static 'img/logos/Html.png' %}">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sec-content">
+						<div class="desc" style="margin-left: 25%;">
+							<br/><br/>
+							<h1>TOP<span>-Ui</span></h1>
+							<p>
+								Transform your wireframe design into a HTML code with AI.
+								<br/>Use a sample from gallery or upload your own design
+							</p>
+						</div>
+					</div>
+				</div>			
+			</div>
+			<div id="aboutsite" class="section suku card-main-wrapper">
+				<div class="abs-bg">
+				</div>
+				<div class="card">
+					<div class="sec-content">
+						<div class="desc">
+							<h1>About</h1>
+							<div>
+								<p>
+									Traditional way when an UX/UI designer needs to design a website he needs to do the rough diagram of wireframe and then if the design proposal is been accepted by the client then the designers needs create the User Interface of the Website should be created but what if the client has been reject the designed proposal then the UX/UI designer need to do from scratch. Here i'm presenting you this website..
+								</p>
+							</div>
+							<div class="orbit">
+								
+							</div>
+							<div class="rotatables">
+								<span><img src="{% static 'img/rtb-1.png' %}"></span>
+								<span><img src="{% static 'img/rtb-3.png' %}"></span>
+								<span><img src="{% static 'img/rtb-4.png' %}"></span>
+								<span><img src="{% static 'img/rtb-5.png' %}"></span>
+								<span><img src="{% static 'img/rtb-6.png' %}"></span>
+								<span><img src="{% static 'img/rtb-7.png' %}"></span>
+								<span><img src="{% static 'img/rtb-8.png' %}"></span>
+								<span><img src="{% static 'img/rtb-9.png' %}"></span>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</div>
+			<div id="port" class="section suku card-main-wrapper">
+				<div class="card">
+					<div class="sec-content">
+						<div class="h1">
+							<h1><span>Pat</span><span>te</span><span>rn</span></h1>
+						</div>
+						<div class="servs">
+							<ul class="serv-list">
+								<li id="web-ui" style="width: auto;">
+									<div class="rott">
+										<div class="front">
+											<img src="{% static 'img/des-logo.png' %}">
+											<h4 class="tit">Template Image</h4>
+										</div>
+										<div class="back">
+											<ul>
+												<li>Create a wireframe</li>
+												<li>Get approved by the team</li>
+												<li>Capture as image</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li id="branding" style="width: auto;">
+									<div class="rott">
+										<div class="front">
+											<img src="{% static 'img/des-graph.png' %}">
+											<h4 class="tit">Process</h4>
+										</div>
+										<div class="back">
+											<ul>
+												<li>Post the image of your wireframe</li>
+												<li>Click on upload-button</li>
+												<li>Wait till the process gets finished.</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li id="graphic" style="width: auto;">
+									<div class="rott">
+										<div class="front">
+											<img src="{% static 'img/des-resp.png' %}">
+											<h4 class="tit">Web-Interface/Output</h4>
+										</div>
+										<div class="back">
+											<ul class="sub-list">
+												<li>The imaage wireframe will be converted</li>
+												<li>You will get the code</li>
+												<li>And you can edit and view if it is required</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>			
+			</div>
+			<div id="contact" class="section suku card-main-wrapper">
+				<div class="card">
+					<div class="sec-content">
+						<div class="subscribe">
+							<div class="h1">
+								<h1>CONTACT</h1>
+							</div>
+							<style type="text/css">
+								#mc_embed_signup {
+									background: #fff;
+									clear: left;
+									font: 14px Helvetica, Arial, sans-serif;
+								}
+							</style>
+							<div id="mc_embed_signup">
+								<form action="send" method="POST" class="validate" novalidate>
+									<div id="mc_embed_signup_scroll">
+										<div class="left-con-block con-block">
+											<div class="mc-field-group">{% csrf_token %}
+												<label for="mce-NAME">Name </label>
+												<input type="text" name="name" class="required" id="mce-NAME">
+											</div>
+											<div class="mc-field-group">
+												<label for="mce-EMAIL">Email Address </label>
+												<input type="email" name="email" class="required email" id="mce-EMAIL">
+											</div>
+											<div class="mc-field-group size1of2">
+												<label for="mce-MMERGE3">Phone_No</label>
+												<input type="text" name="phone" class="required" value="" id="mce-MMERGE3">
+											</div>
+										</div>
+										<div class="right-con-block con-block">
+											<div class="mc-field-group">
+												<label for="mce-QUERY">Your Query </label>
+												<textarea value="" name="query" class="" id="mce-QUERY" style="resize: none;"></textarea>
+											</div>
+											<div id="mce-responses" class="clear">
+												<div class="response text-danger" id="mce-error-response" style="margin-bottom: 45px;">{{error_message}}</div>
+												<div class="response text-primary" id="mce-success-response" style="margin-bottom: 45px;">{{success_message}}</div>
+											</div>
+											<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7b81ce9c35800ae5e99a10918_a59ab3ab8d" tabindex="-1" value=""></div>
+											<div class="clear">
+												<button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"><span>submit</span></button>
+											</div>
+										</div>
+									</div>
+								</form>
+							 </div>
+							<script type='text/javascript' src='http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+							<script type='text/javascript'>
+								(function($) {
+									window.fnames = new Array();
+									window.ftypes = new Array();
+									fnames[1] = 'NAME';
+									ftypes[1] = 'text';
+									fnames[0] = 'EMAIL';
+									ftypes[0] = 'email';
+									fnames[3] = 'phone';
+									ftypes[3] = 'tel';
+									fnames[2] = 'QUERY';
+									ftypes[2] = 'text';
+								}(jQuery));
+								var $mcj = jQuery.noConflict(true);
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="ftr">
+			<div id="fllw" class="section suku card-main-wrapper">
+				<h1 class="trig">Follow</h1>
+				<div class="card">
+					<div class="sec-content">
+						<div class="soci">
+							<ul class="flash">
+								<li class="feeds"><a href="https://www.facebook.com/TopUi.Website" target="_blank"></a></li>
+								<li class="tweets"><a href="https://twitter.com/ui_top" target="_blank"></a></li>
+								<li class="posts"><a href="https://www.instagram.com/topui.website" target="_blank"></a></li>
+								<li class="pens"><a href="https://codepen.io/Top-Ui" target="_blank"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="foot-content">
+					<div class="card">
+						<div class="foot-brand"><a href="#">ToP<img src="{% static 'img/new-logo-2.png' %}" class="img-responsive" style="width: 100px;">ui</a></div>
+						<p class="copy">2016 &nbsp; &copy; &nbsp;<a href="#" class="vlogo">TOP-Ui</a> &nbsp; All Rights Reserved</p>
+					</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(function() {
+			$("html, body").css({
+				overflow: "hidden",
+				height: "100%"
+			});
+			if ($(window).scrollTop() > $(window).height()/2) {
+				$('#hdr .logo').addClass('doit');
+			}
+			setInterval(function() {
+				$('.parallax > div img.widz').each(function(){
+					$(this).removeClass('widz').siblings().addClass('widz');
+				});
+            }, 4000);	
+		});
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > $(window).height()/2){
+				$('#hdr .logo').addClass('doit');
+			}				
+			else{
+				$('#hdr .logo').removeClass('doit');
+			}
+			$('.card').each(function() {
+				if ($(window).scrollTop() + $(window).scrollTop()/4 > $(this).offset().top){
+					$(this).addClass('active');
+				}
+				else{
+					$(this).removeClass('active');
+				};
+			});
+		});
+		$(document).on('click', '.toggle-button', function(){
+			$(this).closest('#hdr').toggleClass('open').siblings('#bd,#ftr').toggleClass('blur-it');
+		});
+		$(document).on('click', '.list li a', function(){
+			$(this).dblclick().closest('#hdr').removeClass('open').siblings('#bd,#ftr').removeClass('blur-it');
+		});
+
+		$( document ).on( "mousemove", function( event ) {
+			if ($(window).width()>767) {
+				var mx = event.pageX;
+				var my = event.pageY - $(window).scrollTop();
+				var range = 100;
+				if (my < range*2 && $('#hdr.open').length == 0 && (mx > $(window).width() - range*2)){
+					var trns_y = (my-range/1.5)/2;
+					var trns_x = (mx - ($(window).width()-range/1.5))/2;
+					$('.toggle-button').addClass('magnet').css({
+						'transform' : 'translate('+trns_x+'px,'+trns_y+'px)'
+					});
+				}
+				else{
+					$('.toggle-button').removeAttr('style').removeClass('magnet');
+				};
+				var transh = mx/20;
+				var transv = my/15;
+				/*$('.parallax > div').each(function(){
+					$(this).css('transform','translateX('+transh+'px) translateY('+transv+'px)');
+					$('.anm-img').css('transform','translateX('+transh/3+'px) translateY('+transv/2+'px)');
+				});*/
+			}
+
+		});
+		var angle = 0;
+		funinit();
+		function funinit() {
+			angle = (360/($('.list li').length)*($('.list li.active').index()));
+			$('.pointer').css({
+				'transform' : 'rotate('+angle+'deg)'
+			});
+		}
+		$(function (){
+			$(document).on('mouseover','.list > li', function(){
+				var len = $('.list li').length;
+				var ths = $(this);
+				var active = $('.list li.active');
+				if (ths.index() >= active.index()){
+					if (ths.index() - active.index() < len/2){
+						angle = angle + (360/(len)*(ths.index() - active.index()));
+							//console.log('case-1');
+					}
+					else{
+						angle = angle - (360/(len)*(len - ths.index() + active.index()));
+							//console.log('case-2');
+					}
+				}
+				else if (ths.index() < active.index()){
+					if (active.index() - ths.index() < len/2){
+						angle = angle - (360/(len)*(active.index() - ths.index()));
+							//console.log('case-3');
+					}
+					else{
+						angle = angle + (360/(len)*(len + ths.index() - active.index()));
+							//console.log('case-4');
+					}
+				}
+				ths.addClass('active').siblings().removeClass('active');
+				$('.pointer').css({
+					'transform' : 'rotate('+angle+'deg)'
+				});
+			});
+		});
+		
+	</script>
+</body>
+
+</html>
